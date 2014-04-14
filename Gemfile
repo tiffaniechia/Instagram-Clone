@@ -32,6 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 group :test, :develeopment do 
 
   gem 'capybara'
