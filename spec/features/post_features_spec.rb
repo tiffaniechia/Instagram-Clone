@@ -2,6 +2,11 @@ require 'spec_helper'
 
 
 describe 'post index page' do 
+
+  before(:each) do 
+    login_as_test_user
+  end 
+
   context 'no post' do 
     it 'shows a message' do 
       visit '/posts'
