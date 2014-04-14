@@ -12,7 +12,7 @@ describe 'uploading photos' do
       visit '/posts/new'
       fill_in 'Description', with: 'kitteh'
       attach_file 'Picture', Rails.root.join('spec/images/kitteh.jpg')
-      save_and_open_page
+      # save_and_open_page
       click_button 'Create Post'
       expect(page).to have_css('img.uploaded-pic')
     end
