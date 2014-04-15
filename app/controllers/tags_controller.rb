@@ -7,10 +7,11 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.where(name: '#'+params[:id])
 
+  end 
+
+  def search
+    redirect_to "/tags/#{params[:search]}"
   end
 
-  # def to_param
-  #   self.name
-  # end
 
 end

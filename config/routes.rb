@@ -4,6 +4,7 @@ InstagramFeb::Application.routes.draw do
   root 'posts#index'
   resources :posts
   resources :tags
+  post '/tags/search' => 'tags#search', as: 'tags_search'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

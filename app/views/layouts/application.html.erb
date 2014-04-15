@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>InstagramFeb</title>
+  <title>Instachug</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -12,15 +12,21 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/posts">Instagram</a>
+      <a class="navbar-brand" href="/posts">CHUGLYF</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Add Post', new_post_path %></li>
+        <li> <%= link_to 'Add Post', new_post_path%></li>
       </ul>
 
+      <div class="navbar-form navbar-left">
+        <%= form_tag(tags_search_path, id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Tags" %>
+          <%= submit_tag "Search" %>
+        <%end%>
+      </div>
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
