@@ -9,7 +9,7 @@
           </h3>
           <h4><span class="label label-info">
             <% post.tags.each do |tag| %>
-              <%= link_to tag.name, "/tags/#{tag.name.sub('#', '')}"%>
+              <%= link_to tag.name, "/tags/#{tag.name.sub('#', '')}", class: 'tags-link'%>
             <% end %>
           </span></h4>
           <%= link_to 'Delete Post', post_path(post),  method: :delete %>
