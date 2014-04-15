@@ -4,6 +4,8 @@ gem 'bootstrap-sass'
 
 gem 'aws-sdk'
 
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1'
 

@@ -3,16 +3,18 @@
     <% @tag.each do |tag| %> 
       <% tag.posts.each do |post| %>
         <div class="col-md-3">
-          <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
-          <h3>
-            <%= post.description %>
-          </h3>
-          <h4><span class="label label-info">
-            <% post.tags.each do |tag| %>
-              <%= link_to tag.name, "/tags/#{tag.name.sub('#', '')}", class: 'tags-link'%>
-            <% end %>
-          </span></h4>
-          <%= link_to 'Delete Post', post_path(post),  method: :delete %>
+          <div class="post">
+            <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+            <h3>
+              <%= post.description %>
+            </h3>
+            <h4><span class="label label-info">
+              <% post.tags.each do |tag| %>
+                <%= link_to tag.name, "/tags/#{tag.name.sub('#', '')}", class: 'tags-link'%>
+              <% end %>
+            </span></h4>
+            <%= link_to 'Delete Post', post_path(post),  method: :delete %>
+          </div>
         </div>
       <%end%>   
     <%end%>
