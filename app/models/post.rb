@@ -8,4 +8,16 @@ class Post < ActiveRecord::Base
   validates_attachment_presence :picture
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
+
+
+  def tag_name
+  end
+  
+  def tag_name=(tag_name)
+    tag_name.split(" ").uniq.each do |tag|
+      tag = Tag.find_or_create_by(name: tag) 
+      tags << tag
+    end
+  end  
+
 end

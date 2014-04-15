@@ -3,6 +3,9 @@
   <% @posts.each do |post| %>
     <%= post.description %>
     <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
+    <% post.tags.each do |tag| %>
+      <%= tag.name %>
+    <% end %>
     <%= link_to 'Delete Post', post_path(post),  method: :delete  %>
   <%end%>  
 
