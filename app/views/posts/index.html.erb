@@ -1,4 +1,4 @@
-<div class="row">
+ <div class="row">
 <% if @posts.any? %>
   <% @posts.each do |post| %>
     <div class="col-md-3">
@@ -8,7 +8,7 @@
       </h3>
       <h4><span class="label label-info">
         <% post.tags.each do |tag| %>
-          <%= tag.name %>
+          <%= link_to tag.name, "/tags/#{tag.name.sub('#', '')}"%>
         <% end %>
       </span></h4>
       <%= link_to 'Delete Post', post_path(post),  method: :delete %>

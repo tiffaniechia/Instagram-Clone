@@ -55,6 +55,14 @@ describe 'post index page' do
       visit '/posts'
       expect(page).to have_content('#meow')
     end  
+
+    it "should display all posts with the same tag" do 
+      visit '/posts'
+      click_link '#meow'
+      expect(current_path).to eq('/tags/meow')
+      expect(page).to have_content('kitteh')
+    end
+
   end  
 
   describe 'deleting posts' do

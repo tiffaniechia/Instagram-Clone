@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+ @import 'bootstrap';
+
+.log-in-message {
+  margin-top: 15px;
+  color: #777;
+  font-size: 14px;
+}
