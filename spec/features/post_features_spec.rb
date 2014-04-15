@@ -36,7 +36,6 @@ describe 'post index page' do
   end
 
   context 'with posts' do
-   
 
     it 'displays the post' do
       visit '/posts/new'
@@ -47,4 +46,29 @@ describe 'post index page' do
       expect(page).to have_content('some awesome snap')
     end
   end
+
+  context 'tags' do 
+
+    before {Post.create(description: 'kitteh', picture: Rails.root.join('spec/images/kitteh.jpg').open, tag_name: '#meow')}
+  
+    it 'should display tags with post' do 
+      visit '/posts'
+      expect(page).to have_content('#meow')
+    end  
+  end  
+
+  describe 'deleting posts' do
+
+    it 'remove post from index page after deletion' do
+      visit '/posts/new'
+      fill_in 'Description', with: 'My holiday pic'
+      attach_file 'Picture', Rails.root.join('spec/images/kitteh.jpg')
+      click_button 'Create Post'      
+      click_link 'Delete Post'
+      expect(page).not_to have_content('kitteh')
+    end
+  end
 end
+
+
+
