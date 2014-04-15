@@ -25,7 +25,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li>Logged in as <%= current_user.email %></li>
+          <li><div class="log-in-message">Logged in as <%= current_user.email %></div></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete%></li>  
         <% else %>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
