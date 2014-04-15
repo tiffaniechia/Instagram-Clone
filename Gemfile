@@ -2,8 +2,10 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 
+gem 'aws-sdk'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -44,6 +46,11 @@ group :test, :develeopment do
   gem 'rspec-rails'
   gem 'launchy'
 
+end  
+
+
+group :production do 
+  gem 'rails_12factor'
 end  
 
 # Use ActiveModel has_secure_password

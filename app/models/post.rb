@@ -2,7 +2,14 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
   has_and_belongs_to_many :tags
-  has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>"}, 
+    storage: :s3,
+    bucket: 'instagram_clone_at',
+    s3_credentials: {
+    access_key_id: Rails.application.secrets.s3_access_key,
+    secret_access_key: Rails.application.secrets.s3_secret_key
+    }
+
 
   validates :description, presence: true
   validates_attachment_presence :picture
