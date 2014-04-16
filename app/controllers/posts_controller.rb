@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-before_action :authenticate_user!, only: [:new, :create]
+before_action :authenticate_user!, only: [:new, :create, :destroy]
   def index
     @posts = Post.all
   end
@@ -11,6 +11,7 @@ before_action :authenticate_user!, only: [:new, :create]
   
   def create
     @post = Post.new(params[:post].permit(:description, :picture, :tag_name))
+    @post.user = current_user
     
     if @post.save
       redirect_to '/posts'
@@ -21,10 +22,15 @@ before_action :authenticate_user!, only: [:new, :create]
   end  
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @post.delete
     redirect_to '/posts'
+
+    rescue ActiveRecord::RecordNotFound
+      flash[:notice] = 'Error! This is not your post'
+      redirect_to '/posts'
+    end  
+
   end 
 
 
-end
