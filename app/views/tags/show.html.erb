@@ -1,10 +1,5 @@
-
-  <% if @tag.posts.any? %>
-    <%= render @tag.posts %> 
-
-
-
-    <%else%>
-    no posts matching tag
-  <%end%>  
-  
+<% if @tag %>
+  <%= render @tag.posts %> 
+<%else%>
+  <h1>No posts matching tag.</h1>
+<%end%>

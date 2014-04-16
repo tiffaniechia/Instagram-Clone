@@ -1,12 +1,7 @@
- <div class="row">
-<% if @posts.any? %>
-  
-   <%= render @posts%>
-
-
-<% else %>
-  <h1> No posts yet</h1>
-
-<% end %>  
-
+<div class="row">
+  <% if @posts.any? %>
+    <%= render @posts%>
+  <% else %>
+    <h1> No posts yet</h1>
+  <% end %>  
 </div>
