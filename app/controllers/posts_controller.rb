@@ -24,6 +24,7 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.delete
+    flash[:notice] = 'Post deleted successfully'
     redirect_to '/posts'
 
     rescue ActiveRecord::RecordNotFound
