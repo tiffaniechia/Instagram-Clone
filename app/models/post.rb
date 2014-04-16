@@ -23,6 +23,7 @@ class Post < ActiveRecord::Base
   
   def tag_name=(tag_name)
     tag_name.split(" ").uniq.each do |tag|
+      tag.prepend('#') unless tag.start_with?('#')
       tag = Tag.find_or_create_by(name: tag) 
       tags << tag
     end
