@@ -9,13 +9,13 @@
   </div>
 <% end %>
 
-<%= form_for @post do |f|%>
+<%= form_for @post, html: { multipart: true } do |f|%>
   
   <%= f.label :description%>
   <%= f.text_area :description%>
   <%= f.label :picture %> 
   <%= f.file_field :picture%>
-  <%= f.label :tag_name%>
+  <%= f.label :tag_name, 'Tags'%>
   <%= f.text_area :tag_name%>
   <%= f.submit%>
 
