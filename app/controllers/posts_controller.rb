@@ -20,7 +20,6 @@ before_action :authenticate_user!, only: [:new, :create]
         
   end  
 
-
   def destroy
     @post = Post.find(params[:id])
     @post.delete

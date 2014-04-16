@@ -16,6 +16,8 @@
           no tags
           <%end%>
         </span></h4>
+        <h6><%=link_to  "#{ pluralize post.comments.count, 'comment'}", post_comments_path(post) %> </h6>
+        <%= link_to 'Add Comment', new_post_comment_path(post) %>
         <%= link_to 'Delete Post', post_path(post),  method: :delete %>
       </div>
     </div>
