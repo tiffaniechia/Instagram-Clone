@@ -5,8 +5,7 @@ class TagsController < ApplicationController
   end  
 
   def show
-    @tag = Tag.where(name: '#'+params[:id])
-
+    @tag = Tag.find_by(name: '#'+params[:id])
   end 
 
   def search
