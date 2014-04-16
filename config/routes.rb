@@ -10,6 +10,7 @@ InstagramFeb::Application.routes.draw do
   root 'posts#index'
   resources :posts do
     resources :comments
+    resources :charges
   end
   resources :tags
   post '/tags/search' => 'tags#search', as: 'tags_search'
