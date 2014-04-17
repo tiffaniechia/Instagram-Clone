@@ -1,7 +1,9 @@
-<div class="row">
-  <% if @posts.any? %>
-    <%= render @posts%>
-  <% else %>
-    <h1> No posts yet</h1>
-  <% end %>  
-</div>
+<% if @posts.any? %>
+  <% @posts.in_groups_of(3, false) do |triplet| %>
+    <div class="row">
+      <%= render triplet %>
+    </div>
+  <% end %>
+<% else %>
+  <h1> No posts yet</h1>
+<% end %>  

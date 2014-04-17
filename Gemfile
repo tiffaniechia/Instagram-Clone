@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+
 gem 'geocoder'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
@@ -49,6 +51,8 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :test, :develeopment do 
 
+  gem 'database_cleaner'
+  gem 'poltergeist'
   gem 'capybara'
   gem 'rspec-rails'
   gem 'launchy'

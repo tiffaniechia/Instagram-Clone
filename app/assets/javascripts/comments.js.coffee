@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $('.comment-link').on 'click', (event) ->
+    event.preventDefault()
+
+    postUrl = $(this).data('post-url')
+    commentArea = $(this).closest('.post').find('.comments')
+
+    $.get postUrl, (post) ->
+      post.comments.forEach (comment) ->
+        commentArea.append("<li>#{comment.comment}</li>")
+
+      commentArea.slideDown()
