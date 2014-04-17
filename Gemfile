@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'geocoder'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 

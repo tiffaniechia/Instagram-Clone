@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
     secret_access_key: Rails.application.secrets.s3_secret_key
     }
 
+  geocoded_by :address
+  after_validation :geocode
 
   validates :description, presence: true
   validates_attachment_presence :picture

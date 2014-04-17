@@ -10,7 +10,7 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
   end
   
   def create
-    @post = Post.new(params[:post].permit(:description, :picture, :tag_name))
+    @post = Post.new(params[:post].permit(:description, :picture, :tag_name, :address))
     @post.user = current_user
     
     if @post.save
@@ -19,6 +19,16 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
       render 'new'
     end
         
+  end  
+
+  def show
+    @post = Post.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @post}
+    end
+
   end  
 
   def destroy
@@ -33,5 +43,6 @@ before_action :authenticate_user!, only: [:new, :create, :destroy]
     end  
 
   end 
+
 
 

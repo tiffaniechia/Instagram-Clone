@@ -1,16 +1,13 @@
 InstagramFeb::Application.routes.draw do
 
-  get 'comments/index'
-
-  get 'comments/new'
-
-  get 'comments/create'
+  get 'maps/show'
 
   devise_for :users
   root 'posts#index'
   resources :posts do
     resources :comments
     resources :charges
+    resource :map  
   end
   resources :tags
   post '/tags/search' => 'tags#search', as: 'tags_search'
