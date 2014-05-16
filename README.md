@@ -2,7 +2,7 @@
 
 For week 9 at [Makers Academy](http://makersacademy.com), we were tasked to build a web application that replicated the core functionalities that Instagram has.
 
-The app has several core features which included:
+The app has several core features which includes:
 
  - User login & authentication
  - Posts uploading, created with a picture, hashtags, and location
@@ -42,11 +42,10 @@ The task was set by [Alex Peattie](https://github.com/alexpeattie).
  - HTML
  - CSS
  - BootStrap
- - Postgres sql
+ - Postgresql
  - TDD with RSpec, Capybara, and FactoryGirl
 
 
-
- ##Collaborators
+ ##Collaborators 
  - [Andrew Cumine](https://github.com/ajcumine)
  - [Tiffanie Chia](https://github.com/tiffaniechia)
